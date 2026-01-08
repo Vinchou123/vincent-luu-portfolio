@@ -1,7 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useContext } from 'react'
-import { ThemeContext } from '../ThemeContext'
 import { Link } from 'react-router-dom'
 const MotionLink = motion(Link)
 
@@ -21,17 +19,7 @@ export default function Header(){
           <MotionLink whileHover={{ y: -3 }} to="/projects">Projets</MotionLink>
           <MotionLink whileHover={{ y: -3 }} to="/contact">Contact</MotionLink>
         </nav>
-        <ThemeToggle />
       </motion.div>
     </header>
-  )
-}
-
-function ThemeToggle(){
-  const { theme, toggle } = useContext(ThemeContext)
-  return (
-    <button className="theme-toggle" onClick={toggle} aria-label="Basculer thème">
-      {theme === 'dark' ? '☀️' : '🌙'}
-    </button>
   )
 }
